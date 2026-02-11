@@ -243,9 +243,7 @@ thead th {
     letter-spacing: 0.3px;
     border: 1px solid rgba(var(--navy-rgb), 0.8);
     white-space: nowrap;
-    position: sticky;
-    top: 46px;
-    z-index: 10;
+    /* position: sticky removed — breaks inside overflow-x:auto containers */
 }
 
 tbody td {
@@ -268,6 +266,11 @@ tbody tr td strong {
 
 tbody tr:last-child td {
     border-bottom: 2px solid var(--navy);
+}
+
+/* ── Hide empty thead rows (key-value tables without headers) ── */
+thead:not(:has(th:not(:empty))) {
+    display: none;
 }
 
 /* ── Check / Pass / Fail ── */
@@ -1111,12 +1114,6 @@ Stallings Road and Linkside Drive
 Taylors, Greenville County, South Carolina 29687</p>
 <p>35-Lot Single-Family Subdivision + 5 Proposed Custom Homes — Phase 1 Development</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE</strong></td>
@@ -1129,10 +1126,6 @@ Taylors, Greenville County, South Carolina 29687</p>
 <tr>
 <td><strong>2026 AS-IS VALUE</strong></td>
 <td><strong>$3,460,000</strong></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table></div>
@@ -1370,12 +1363,6 @@ Marcus &amp; Millichap</p>
 </table></div>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete</td>
@@ -1393,12 +1380,6 @@ Marcus &amp; Millichap</p>
 </table></div>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -1464,12 +1445,6 @@ February 9, 2026</p>
 Oceanside, San Diego County, California 92054</p>
 <p>13-Unit Value-Add Multifamily (11 Renovated Apartments + 2 ADU Conversions)</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE</strong></td>
@@ -1773,13 +1748,6 @@ Marcus &amp; Millichap</p>
 </table></div>
 <p><em>Utilities reflect common-area only; in-unit utilities paid by tenant. Total operating expenses reconcile to EGI − NOI.</em></p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>Net Operating Income</strong></td>
@@ -1827,12 +1795,6 @@ Marcus &amp; Millichap</p>
 <p>The 5.00% cap rate is maintained from the prior appraisal, reflecting the appraiser&rsquo;s appropriate premium for a fully stabilized, no-upside scenario in a coastal submarket where market-average rates cluster in the 4.7%-4.8% range.</p>
 <h3>Income Approach Value</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Stabilized NOI</td>
@@ -1857,12 +1819,6 @@ Marcus &amp; Millichap</p>
 <p>The as-is value reflects the current state of the property — renovation substantially complete with $171,136 in remaining costs. The Genesis methodology deducts remaining costs and entrepreneurial profit from the stabilized value.</p>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete</td>
@@ -1881,12 +1837,6 @@ Marcus &amp; Millichap</p>
 <p>Per Genesis guidelines, the reduced 12% profit factor applies when remaining costs are less than 10% of stabilized value, indicating the project is more than 90% complete by cost. With only $171,136 remaining against a $534,000 threshold (10% of $5,340,000), the project qualifies for the reduced profit deduction.</p>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -1997,12 +1947,6 @@ February 9, 2026</p>
 San Diego, San Diego County, California 92103</p>
 <p>90-Unit Class A Mixed-Use High-Rise (82 Market + 8 BMR Apartments + Retail)</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE</strong></td>
@@ -2439,12 +2383,6 @@ Marcus &amp; Millichap</p>
 </tbody>
 </table></div>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>Net Operating Income</strong></td>
@@ -2490,12 +2428,6 @@ Marcus &amp; Millichap</p>
 <p>The 25 basis point expansion from the appraised 4.75% reflects recent market transactions and the elevated vacancy environment. The 5.00% rate is directly supported by the Uptown Lofts transaction — a 2024-built, 23-unit property in Hillcrest that sold at a 5.00% cap rate in December 2025. The 5.00% conclusion is conservative relative to The Charmer&rsquo;s 5.20% and well within the PwC survey range.</p>
 <h3>Income Approach Value</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Stabilized NOI</td>
@@ -2520,12 +2452,6 @@ Marcus &amp; Millichap</p>
 <p>The as-is value reflects the property&rsquo;s current status as an under-construction development approximately 68% physically complete (15 months into a 22-month construction schedule). The construction budget is fully funded (&ldquo;Complete&rdquo; per Genesis records), meaning no additional costs remain payable to Genesis. However, the property requires lease-up upon completion, with associated carrying costs.</p>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost Remaining to Genesis</td>
@@ -2544,12 +2470,6 @@ Marcus &amp; Millichap</p>
 <p>Per Genesis guidelines, the reduced 12% profit factor applies when cost remaining is less than 10% of stabilized value. With $0 remaining construction cost to Genesis, the project is effectively fully funded. Note: &ldquo;$0 cost remaining&rdquo; refers to construction draws that have been fully funded by the lender — it does not indicate physical completion. The property is approximately 68% physically complete with a projected completion date of September 2026.</p>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -2663,12 +2583,6 @@ February 9, 2026</p>
 Palm Bay, Brevard County, Florida 32905</p>
 <p>120-Unit Workforce Housing Community + 10,000 SF Retail (120% AMI LURA)</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE</strong></td>
@@ -2787,12 +2701,6 @@ Marcus &amp; Millichap</p>
 <p>The development consists of garden-style low-rise apartment buildings containing 120 residential units and 10,000 SF of ground-floor retail space. The property is designed to deliver institutional-quality workforce housing at near-market rents, benefiting from the LURA income restrictions that enable favorable financing terms while targeting the underserved moderate-income renter cohort.</p>
 <h3>Income Restriction Structure</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Program</td>
@@ -2822,12 +2730,6 @@ Marcus &amp; Millichap</p>
 </table></div>
 <h3>Occupancy Projections</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Upon Completion</td>
@@ -2977,12 +2879,6 @@ Marcus &amp; Millichap</p>
 </tbody>
 </table></div>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Apartment NOI</td>
@@ -3040,12 +2936,6 @@ Marcus &amp; Millichap</p>
 <p>The 15 basis point expansion from the appraised 5.35% reflects the severe vacancy environment. While the subject&rsquo;s workforce housing designation provides some stability, the overall market distress and unprecedented supply overhang warrant a modest risk premium.</p>
 <h3>Income Approach Value</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Stabilized NOI</td>
@@ -3070,12 +2960,6 @@ Marcus &amp; Millichap</p>
 <p>The as-is value reflects the property&rsquo;s near-completion status with $2,743,000 in remaining costs. Per the original construction timeline, the property was projected for completion in December 2025 and stabilization by May 2026.</p>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete</td>
@@ -3094,12 +2978,6 @@ Marcus &amp; Millichap</p>
 <p>Per Genesis guidelines, the reduced 12% profit factor applies because the remaining cost ($2,743,000) is less than 10% of the stabilized value ($2,987,000), indicating the project is more than 90% complete by cost.</p>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -3212,12 +3090,6 @@ February 9, 2026</p>
 Seattle, King County, Washington 98107</p>
 <p>5-Unit New Construction Rowhome Development — For-Sale Residential</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE (Sum of Retail)</strong></td>
@@ -3415,12 +3287,6 @@ Marcus &amp; Millichap</p>
 <h2>As-Is Value (Genesis Methodology)</h2>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete</td>
@@ -3438,12 +3304,6 @@ Marcus &amp; Millichap</p>
 </table></div>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -3506,12 +3366,6 @@ February 9, 2026</p>
 Seattle, King County, Washington 98115</p>
 <p>5-Unit New Construction Townhome Development — For-Sale Residential</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE (Sum of Retail)</strong></td>
@@ -3725,12 +3579,6 @@ Marcus &amp; Millichap</p>
 <h2>As-Is Value (Genesis Methodology)</h2>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete</td>
@@ -3748,12 +3596,6 @@ Marcus &amp; Millichap</p>
 </table></div>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -3817,12 +3659,6 @@ February 9, 2026</p>
 Los Angeles, Los Angeles County, California 90026</p>
 <p>5-Unit Small Multifamily (2 Duplexes + 1 ADU, New Construction)</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE</strong></td>
@@ -4268,12 +4104,6 @@ Marcus &amp; Millichap</p>
 </tbody>
 </table></div>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>Net Operating Income (Pre-Adjustment)</strong></td>
@@ -4343,12 +4173,6 @@ Marcus &amp; Millichap</p>
 <p>The 25 basis point expansion from the appraised 5.25% reflects the preponderance of 2025 transaction evidence showing cap rates in the 5.28%-5.68% range for comparable small multifamily product. The 5.50% conclusion is slightly below the 242 N Dillon comp&rsquo;s 5.68%, reflecting the subject&rsquo;s marginally superior positioning as the appraised property (versus a recently sold comp that was marketed to a California investor in a 1031-type transaction scenario).</p>
 <h3>Income Approach Value</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Adjusted Stabilized NOI</td>
@@ -4416,12 +4240,6 @@ Marcus &amp; Millichap</p>
 <p>The as-is value reflects the property&rsquo;s current status as under construction. The appraisal projected completion by December 16, 2025; as of the BPO effective date (February 2026), construction appears to still be in progress based on the $1,317,000 remaining cost per the Genesis CSV.</p>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete</td>
@@ -4440,12 +4258,6 @@ Marcus &amp; Millichap</p>
 <p>The remaining cost ($1,317,000) significantly exceeds 10% of the stabilized value ($354,000), indicating substantial construction work remains. The standard 20% profit factor applies.</p>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -4559,12 +4371,6 @@ February 9, 2026</p>
 Houston, Harris County, Texas 77080</p>
 <p>13-Lot Patio Home Development (7 Homes + 6 Remaining Lots) — For-Sale Residential</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE</strong></td>
@@ -4577,10 +4383,6 @@ Houston, Harris County, Texas 77080</p>
 <tr>
 <td><strong>2026 AS-IS VALUE</strong></td>
 <td><strong>$2,360,000</strong></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table></div>
@@ -4792,12 +4594,6 @@ Marcus &amp; Millichap</p>
 <h2>As-Is Value (Genesis Methodology)</h2>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete</td>
@@ -4816,12 +4612,6 @@ Marcus &amp; Millichap</p>
 <p>Note: The cost to complete ($344K) exceeds the 10% threshold ($338K) by only $6,000. This is the tightest margin in the portfolio and warrants monitoring — if any costs have been drawn down since the CSV was generated, the 12% factor may apply.</p>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -4883,12 +4673,6 @@ February 9, 2026</p>
 Palatka, Putnam County, Florida 32177</p>
 <p>120-Unit LIHTC Senior (55+) Apartment Community — Value-Add Renovation</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE (Restricted)</strong></td>
@@ -5268,13 +5052,6 @@ Marcus &amp; Millichap</p>
 </tbody>
 </table></div>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>Net Operating Income</strong></td>
@@ -5319,12 +5096,6 @@ Marcus &amp; Millichap</p>
 <p>The 5.75% cap rate reflects the stability of LIHTC income streams, the property tax exemption benefit, and the government-backed demand for affordable senior housing. LIHTC assets trade at tighter cap rates than conventional multifamily due to income predictability and long-term regulatory support.</p>
 <h3>Income Approach Value</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Stabilized NOI</td>
@@ -5349,12 +5120,6 @@ Marcus &amp; Millichap</p>
 <p>The as-is value reflects the current state of the property — renovation approximately 92% complete with an estimated $160,000 in remaining costs. The Genesis methodology deducts remaining costs and entrepreneurial profit from the stabilized value.</p>
 <h3>Renovation Progress</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Total Renovation Budget</td>
@@ -5381,12 +5146,6 @@ Marcus &amp; Millichap</p>
 <p><strong>Note:</strong> Cost to complete is estimated based on renovation timeline proration, as the Genesis CSV did not specify a remaining cost figure for this loan.</p>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete (estimated)</td>
@@ -5405,12 +5164,6 @@ Marcus &amp; Millichap</p>
 <p>Per Genesis guidelines, the reduced 12% profit factor applies when remaining costs are less than 10% of stabilized value, indicating the project is more than 90% complete by cost. With only an estimated $160,000 remaining against a $1,091,000 threshold, the project qualifies for the reduced profit deduction.</p>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -5523,12 +5276,6 @@ February 9, 2026</p>
 Columbus, Muscogee County, Georgia 31903</p>
 <p>120-Unit Garden Apartment Community — LIHTC Decontrol / Market-Rate Conversion</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE (Market Rate)</strong></td>
@@ -5953,13 +5700,6 @@ Marcus &amp; Millichap</p>
 </tbody>
 </table></div>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>Net Operating Income</strong></td>
@@ -6011,12 +5751,6 @@ Marcus &amp; Millichap</p>
 <p>The 7.00% cap rate represents a 50 basis point expansion from the CBRE appraisal&rsquo;s concluded 6.50%. This widening reflects the secondary market risk premium indicated by comparable transactions in Dothan, Macon, and Valdosta (7.00%-7.22%) and the CoStar Columbus market average of approximately 7.0%. The rate is at the low end of the comparable range, reflecting the improving submarket trajectory.</p>
 <h3>Income Approach Value</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Stabilized NOI</td>
@@ -6040,12 +5774,6 @@ Marcus &amp; Millichap</p>
 <h2>As-Is Value (Genesis Methodology)</h2>
 <h3>Renovation &amp; Transition Progress</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Total Renovation Budget</td>
@@ -6080,12 +5808,6 @@ Marcus &amp; Millichap</p>
 <p><strong>Note:</strong> Cost to complete is estimated based on renovation timeline proration, as the Genesis CSV did not specify a remaining cost figure for this loan.</p>
 <h3>Profit Factor Determination</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete (estimated)</td>
@@ -6103,12 +5825,6 @@ Marcus &amp; Millichap</p>
 </table></div>
 <h3>As-Is Value Calculation</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -6537,12 +6253,6 @@ Marcus &amp; Millichap</p>
 <h2>As-Is Value (Genesis Methodology)</h2>
 <h3>STR Scenario</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 STR Stabilized</td>
@@ -6564,12 +6274,6 @@ Marcus &amp; Millichap</p>
 </table></div>
 <h3>Rental Fallback Scenario</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Rental Stabilized</td>
@@ -6986,12 +6690,6 @@ Marcus &amp; Millichap</p>
 <h2>As-Is Value (Genesis Methodology)</h2>
 <h3>STR Scenario</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 STR Stabilized</td>
@@ -7013,12 +6711,6 @@ Marcus &amp; Millichap</p>
 </table></div>
 <h3>Rental Fallback Scenario</h3>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Rental Stabilized</td>
@@ -7140,12 +6832,6 @@ February 9, 2026</p>
 Seaside, Clatsop County, Oregon 97138</p>
 <p>66-Unit Class A Garden-Style Apartment Community (New Construction)</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE</strong></td>
@@ -7504,12 +7190,6 @@ Marcus &amp; Millichap</p>
 </tbody>
 </table></div>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>Net Operating Income</strong></td>
@@ -7532,12 +7212,6 @@ Marcus &amp; Millichap</p>
 <hr />
 <h2>As-Is Value (Genesis Methodology)</h2>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete</td>
@@ -7554,12 +7228,6 @@ Marcus &amp; Millichap</p>
 </tbody>
 </table></div>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
@@ -7628,12 +7296,6 @@ February 9, 2026</p>
 Santa Rosa, Sonoma County, California 95403</p>
 <p>6-Unit Custom Single-Family Home Development — For-Sale Residential</p>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td><strong>2026 STABILIZED VALUE</strong></td>
@@ -7788,12 +7450,6 @@ Marcus &amp; Millichap</p>
 <hr />
 <h2>As-Is Value (Genesis Methodology)</h2>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>Cost to Complete</td>
@@ -7810,12 +7466,6 @@ Marcus &amp; Millichap</p>
 </tbody>
 </table></div>
 <div class="table-scroll"><table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
 <tbody>
 <tr>
 <td>2026 Stabilized Value</td>
